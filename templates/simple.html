@@ -1,0 +1,66 @@
+{% extends "index.html" %}
+
+{% block mainContent %}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-8">Calculadora Flask</h1>
+        <p class="lead"> experimente essa calculadora incrivel</p>
+    </div>
+
+
+</div>
+<form class="container">
+    <div class="row">
+        <div class="col-lg-2 col-md-3">
+            <input type="number" class="form-control" placeholder="informe um numero ">
+        
+        </div> 
+
+        <div class="col-lg-2">
+            <select id="selectOperation" class="form-control">
+                <option selected>Selecione</option>
+                <option >+</option>
+                <option>-</option>
+                <option >X</option>
+                <option >/</option>
+            </select>
+        </div>
+
+        <div class="col-lg-2 col-md-3">
+        <input type="number"  name="secondNumber" class="form-control" placeholder="informe um numero "/>
+        
+        </div>  
+        
+        <div class="col-lg-3">
+            <input type="submit" value="calculadora" class="btn btn-primary">
+        </div>
+    
+        <div class="row mt-3">
+            <div class="col-lg-1">
+                <div class="text-center">=</div>
+
+            </div>
+            <div class="col-lg-3">
+                <input type="text" class="form-control" placeholder="resultado" >
+            </div>
+
+
+        </div>
+
+
+
+
+    
+    
+    </div>
+
+
+
+
+
+</form>
+
+
+
+{% endblock %}
