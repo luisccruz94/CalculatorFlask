@@ -2,65 +2,80 @@
 
 {% block mainContent %}
 
-<div class="jumbotron jumbotron-fluid">
+<div class=" container-fluid d-flex align-items-center flex-column justify-content-center bg-body-tertiary text-center mt-5">
     <div class="container">
         <h1 class="display-8">Calculadora Flask</h1>
         <p class="lead"> experimente essa calculadora incrivel</p>
     </div>
 
+    
+    
 
-</div>
-<form class="container">
-    <div class="row">
-        <div class="col-lg-2 col-md-3">
-            <input type="number" class="form-control" placeholder="informe um numero ">
+
+    <form class="container-fluid " action="{{url_for('calculadora')}}" method="post">
+        <div class="row container-fluid d-flex align-items-center  justify-content-center  px-4 text-center">
+            <div class="col-lg-2 col-md-3 ">
+                <input type="number" name="firstNumber" class="form-control" placeholder="informe um numero " required>
+                
+            </div> 
+            
+            <div class="col-lg-2 col-md-3 ">
+                <select id="selectOperation" class="form-control" name="operacao" required>
+                    <option value="">Selecione</option>
+                    <option value="plus" >+</option>
+                    <option value="minus">-</option>
+                    <option value="multiply">X</option>
+                    <option value="divide" >/</option>
+                </select>
+            </div>
+            
+            <div class="col-lg-2 col-md-3">
+                <input type="number"  name="secondNumber" class="form-control" placeholder="informe um numero "required>
+                
+            </div>  
+            
+            <div class="col-md-1 ">
+                <input type="submit" value="calculadora" class="btn btn-primary">
+            </div>
+            
+            
+            
+            
+        </div>
         
-        </div> 
 
         <div class="col-lg-2">
-            <select id="selectOperation" class="form-control">
-                <option selected>Selecione</option>
-                <option >+</option>
-                <option>-</option>
-                <option >X</option>
-                <option >/</option>
-            </select>
+            <div class="alert{{color}}">{{note}}</div>
+            
+            
         </div>
 
-        <div class="col-lg-2 col-md-3">
-        <input type="number"  name="secondNumber" class="form-control" placeholder="informe um numero "/>
         
-        </div>  
-        
-        <div class="col-lg-3">
-            <input type="submit" value="calculadora" class="btn btn-primary">
-        </div>
-    
-        <div class="row mt-3">
-            <div class="col-lg-1">
-                <div class="text-center">=</div>
+        <div class="row d-flex align-items-center justify-content-center mt-3">
+                <div class="col-lg-1">
+                    <div class="text-center">=</div>
 
-            </div>
-            <div class="col-lg-3">
-                <input type="text" class="form-control" placeholder="resultado" >
+                </div>
+                <div class="col-lg-2 ">
+                    <input type="text" class="form-control" placeholder="resultado" value="{{resultado}}" >
+                </div>
+
+
             </div>
 
 
-        </div>
 
 
-
-
-    
-    
-    </div>
+        
+        
+        
 
 
 
 
 
-</form>
-
+    </form>
+</div>
 
 
 {% endblock %}

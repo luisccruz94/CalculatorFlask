@@ -1,0 +1,79 @@
+{% extends "index.html" %}
+
+{% block mainContent %}
+
+<div class=" container-fluid d-flex align-items-center flex-column justify-content-center bg-body-tertiary text-center mt-5">
+    <div class="container">
+        <h1 class="display-8">Calculadora avancada de  Flask</h1>
+        <p class="lead"> experimente essa calculadora incrivel</p>
+    </div>
+
+
+
+    <form class="container bg-body-tertiary text-center" action="{{url_for('calculadora_avancado')}}" method="post">
+        <div class=" row d-flex align-items-center justify-content-center">
+            <div class="col-lg-2 col-md-3">
+                <input type="number" name="firstNumber" class="form-control" placeholder="informe um numero " required>
+            
+            </div> 
+
+            <div class="col-lg-2">
+                <select id="selectOperation" class="form-control" name="operacao" required>
+                    <option value="">Selecione a função</option>
+                    <option value="sin" >sin</option>
+                    <option value="cos">cos</option>
+                    <option value="tan">tan</option>
+                    <option value="log" >log</option>
+                    <option value="exp" >exp</option>
+                    <option value="asinh" >asinh</option>
+                    <option value="acosh" >acosh</option>
+                    <option value="atanh" >atanh</option>
+                    <option value="asin" >asin</option>
+                    <option value="acos" >acos </option>
+                    <option value="sqrt" >squre root</option>
+                </select>
+            </div>
+
+            
+            <div class="col-lg-1 ">
+                <input type="submit" value="calculadora" class="btn btn-primary">
+            </div>
+
+
+
+            <div class="col-lg-2" >
+                <div class="alert{{color}}">{{note}}</div>
+
+
+            </div>
+        </div>
+            
+        
+            <div class="row mt-3 justify-content-center">
+                <div class="col-lg-1">
+                    <div class="text-center">=</div>
+
+                </div>
+                <div class="col-lg-3 ">
+                    <input type="text" class="form-control" placeholder="resultado" value="{{resultado}}" >
+                </div>
+
+
+            </div>
+
+
+
+
+        
+        
+        
+
+
+
+
+
+    </form>
+
+</div>
+
+{% endblock %}

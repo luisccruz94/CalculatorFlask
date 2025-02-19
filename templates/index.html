@@ -9,29 +9,45 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">calcular</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+      <div class="container-fluid">
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="{{url_for('main')}}">Home <span class="sr-only"></span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">simples</a>
+                <a class="nav-link" href="{{url_for('simple')}}">simples</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">avançado</a>
+                <a class="nav-link" href="{{url_for('avancado')}}">avançado</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
 
+      {% if home %}
+        <div class="container-fluid ">
+          <div class="container p-5 mb-4 mt-3 bg-body-tertiary rounded-3 text-center  ">
+            <p class="lead text-center mt-5 alert alert-primary "> essa é uma calculadora simples que pode somar dois numeros, subtrair, multiplicar e dividir dois numeros</p>
+            <a  class="btn btn-success" href="{{url_for('simple')}}">use a calculadora simples</a>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="container p-5 mb-4 bg-body-tertiary rounded-3 text-center">
+              <p class="lead text-center mt-5 alert alert-primary "> essa é uma calculadora avançada, contem diversas funçoes matematica, sin, cos,tan, squre root, etc...</p>
+              <a class="btn btn-success" href="{{url_for('avancado')}}">use a calculadora avançada</a>
+              
+          </div>
+      </div>
+      
+      {% endif %}
+      
+      
+  
 
-    
+
+
     {% block mainContent %}
 
 
